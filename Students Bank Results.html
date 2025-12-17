@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Results</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body style="background-color: aquamarine;">
+  <h1>End Of Term One Student Results</h1>
+  
+  <div>
+    <label for="studentName">Student Name: </label>
+    <input type="text" id="studentName">
+    <label for="marksMath">Math Marks: </label>
+    <input type="number" id="marksMath">
+    <label for="marksScience">Science Marks: </label>
+    <input type="number" id="marksScience">
+    <label for="marksEnglish">English Marks: </label>
+    <input type="number" id="marksEnglish">
+    <label for="marksKiswahili">Kiswahili Marks: </label>
+    <input type="number" id="marksKiswahili">
+    <label for="marksSocialStudies">Social Studies Marks: </label>
+    <input type="number" id="marksSocialStudies">
+    <br></br>
+    <button style="background-color: black; padding:10px; border-radius: 8px;color: red;width: 120px; " onclick="addStudent()">Add Student</button>
+  </div>
+  
+  <br></br>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Math Marks</th>
+        <th>Science Marks</th>
+        <th>English Marks</th>
+        <th>Kiswahili Marks</th>
+        <th>Social Studies Marks</th>
+      </tr>
+    </thead>
+    <tbody id="studentTable">
+    </tbody>
+  </table>
+  
+  <script>
+    function addStudent() {
+      var studentName = document.getElementById("studentName").value;
+      var marksMath = document.getElementById("marksMath").value;
+      var marksScience = document.getElementById("marksScience").value;
+      var marksEnglish = document.getElementById("marksEnglish").value;
+      var marksKiswahili = document.getElementById("marksKiswahili").value;
+      var marksSocialStudies = document.getElementById("marksSocialStudies").value;
+
+      
+      var table = document.getElementById("studentTable");
+      var newRow = table.insertRow(table.rows.length);
+      
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+      var cell3 = newRow.insertCell(2);
+      var cell4 = newRow.insertCell(3);
+      var cell5 = newRow.insertCell(4);
+      var cell6 = newRow.insertCell(5);
+      
+      cell1.innerHTML = studentName;
+      cell2.innerHTML = marksMath;
+      cell3.innerHTML = marksScience;
+      cell4.innerHTML = marksEnglish;
+      cell4.innerHTML = marksKiswahili;
+      cell4.innerHTML = marksSocialStudies;
+      
+      document.getElementById("studentName").value = "";
+      document.getElementById("marksMath").value = "";
+      document.getElementById("marksScience").value = "";
+      document.getElementById("marksEnglish").value = "";
+      document.getElementById("marksKiswahili").value = "";
+      document.getElementById("marksSocialStudies").value = "";
+    }
+  </script>
+</body>
+</html><style></style><script></script>
